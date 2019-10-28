@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ pageTitle }}</title>
+    <link href='/css/main.css' rel='stylesheet' />
+    {{#if gameCSS}}
+        <link href='/css/game.css' rel='stylesheet' />
+    {{/if}}
+    <script defer src="/js/script.js"></script>
+</head>
+<body>
+    {{{ body }}}
+</body>
+</html>

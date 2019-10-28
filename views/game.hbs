@@ -1,0 +1,32 @@
+<table
+    {{#if rotateClock}}
+        class="clock"
+    {{else}}
+        class="cntrclock"
+    {{/if}}>
+    {{#each board}}
+    <tr>
+        {{#each this}}
+        <td {{#if this}} class="check" {{/if}}>
+        {{#if this}}
+            <div
+            {{#if ../../rotateClock}}
+                class="tile tile-good tile-cntrclock"
+            {{else}}
+                class="tile tile-good tile-clock"
+            {{/if}}>
+            &#10004;</div>
+        {{else}}
+            <div
+            {{#if ../../rotateClock}}
+                class="tile tile-bad tile-cntrclock"
+            {{else}}
+                class="tile tile-bad tile-clock"
+            {{/if}}>
+            &#10006;</div>
+        {{/if}}
+        </td>
+        {{/each}}
+    </tr>
+    {{/each}}
+</table>
