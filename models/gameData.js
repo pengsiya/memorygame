@@ -1,6 +1,6 @@
-let currRow = 5;
-let currCol = 5;
-let currGoal = 5;
+let currRow = 4;
+let currCol = 4;
+let currGoal = 4;
 function getBoard (row, col, goal_count) {
     const count = row * col
     let random_goals = function (count, goal_count){
@@ -32,14 +32,75 @@ function getCurrRow() {
     return currRow;
 }
 function getCurrCol() {
-    return currRow;
+    return currCol;
 }
 function getCurrGoal() {
-    return currRow;
+    return currGoal;
 }
+function increCurrRow(){
+    currRow++;
+}
+function increCurrCol(){
+    currCol++;
+}
+function increCurrGoal(){
+    currGoal++;
+}
+function decreCurrRow(){
+    currRow--;
+}
+function decreCurrCol(){
+    currCol--;
+}
+function decreCurrGoal(){
+    currGoal--;
+}
+function indexOfSmallest(a) {
+    return a.indexOf(Math.min.apply(Math, a));
+}
+function indexOfLargest(a) {
+    return a.indexOf(Math.max.apply(Math, a));
+}
+function adjust (increment) {
+    if (increment) {
+        let ind = indexOfSmallest([currRow,currCol,2+currGoal/2])
+        switch (ind) {
+            case 0:
+                currRow++;
+                break;
+            case 1:
+                currCol++;
+                break;
+            case 2:
+                currGoal++;
+                break;
+        }
+    } else {
+        let ind = indexOfLargest([2+currGoal/2,currRow,currCol])
+        switch (ind) {
+            case 0:
+                currGoal--;
+                break;
+            case 1:
+                currRow--;
+                break;
+            case 2:
+                currCol--;
+                break;
+        }
+    }
+}
+
 module.exports = {
     getBoard,
     getCurrRow,
     getCurrCol,
-    getCurrGoal
+    getCurrGoal,
+    increCurrRow,
+    increCurrCol,
+    increCurrGoal,
+    decreCurrRow,
+    decreCurrCol,
+    decreCurrGoal,
+    adjust
 }

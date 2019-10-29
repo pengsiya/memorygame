@@ -1,0 +1,47 @@
+
+.tile {
+    display: none;
+    width: auto;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    font-size:35px;
+    color: white;
+}
+.tile-good {
+    background-color: green;
+}
+.tile-bad {
+    background-color: orange;
+}
+.tile-clock{
+    transform: rotate(90deg);
+    --d:90deg;
+}
+.tile-cntrclock{
+    transform: rotate(-90deg);
+    --d:-90deg;
+}
+.tile-pop {
+    animation: popit 0.3s linear 1 forwards;
+}
+@keyframes popit{
+    0% {
+      width: 20%;
+      height: 20%;
+      opacity: 0;
+      border-radius: 50%;
+    }
+    70% {
+      width: 120%;
+      height: 120%;
+      transform: translateX(-10%) rotate(var(--d,0deg));
+      border-radius: 50%;
+      opacity: 1;
+    }
+    100% {
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+    }
+  }
