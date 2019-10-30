@@ -1,9 +1,11 @@
 body {
+    background-color: black;
+}
+body > div.wrapper-center{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: black;
 }
 td {
     border-radius: 10%;
